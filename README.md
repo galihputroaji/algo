@@ -10,4 +10,6 @@
 ### CONTENT:
 - Semester 1 - Flowgorithm:
   - Variable dan Tipe Data
+  - Operator Aritmatika 
+     - [Tugas](https://github.com)
   - Percabangan
