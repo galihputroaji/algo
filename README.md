@@ -11,5 +11,5 @@
 - Semester 1 - Flowgorithm:
   - Variable dan Tipe Data
   - Operator Aritmatika 
-     - <a href="https://github.com](https://github.com/galihputroaji/algo/tree/main/Tugas%20-%20Operator%20Aritmatika">Tugas</a>
+     - <a href="https://github.com/galihputroaji/algo/tree/main/Tugas%20-%20Operator%20Aritmatika">Tugas</a>
   - Percabangan
