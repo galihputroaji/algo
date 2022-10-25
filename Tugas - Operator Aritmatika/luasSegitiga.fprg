@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Galih"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-10-24 07:14:09 AM"/>
+        <attribute name="created" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTAtMTk7MTA6MDU6NDQgQU07MjgzMw=="/>
+        <attribute name="edited" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTAtMTk7MTA6MjU6MjUgUE07MTA7R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTAtMTk7MDc6MDM6NTMgQU07S2Fsa3VsYXRvciBBbGdvLmZwcmc7NzkwNg=="/>
+        <attribute name="edited" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTAtMjQ7MDc6MTQ6MDkgQU07MzsyOTQ2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="alas, tinggi, luas" type="Real" array="False" size=""/>
+            <output expression="&quot;Silahkan Masukan Alas Segitiga:&quot;" newline="True"/>
+            <input variable="alas"/>
+            <output expression="&quot;Silahkan Masukan Tinggi Segitiga:&quot;" newline="True"/>
+            <input variable="tinggi"/>
+            <assign variable="luas" expression="1/2 * (alas*tinggi)"/>
+            <output expression="&quot;Alas Segitiga: &quot; &amp; alas &amp; &quot; cm&quot;" newline="True"/>
+            <output expression="&quot;Tinggi Segitiga: &quot; &amp; tinggi &amp; &quot; cm&quot;" newline="True"/>
+            <output expression="&quot;Luas Segitiga: &quot; &amp; luas &amp; &quot; cm&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
