@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value="Kalkulator Algo"/>
+        <attribute name="authors" value="Galih"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-01 09:01:52 AM"/>
+        <attribute name="created" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTAtMTk7MDc6MDM6NTMgQU07MjgzNw=="/>
+        <attribute name="edited" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTEtMDE7MDk6MDE6NTIgQU07NTsyOTQw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="status" type="Integer" array="False" size=""/>
+            <assign variable="status" expression="1"/>
+            <while expression="status &gt; 0">
+                <output expression="&quot;Selamat Datang Di Kalkulator Algo&quot; &amp; ToChar(13)" newline="True"/>
+                <output expression="&quot;Butuh Apa Nih?&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;1. Hitung Keliling Lingkaran&quot; &amp;  ToChar(13) &amp; &#13;&#10;&quot;2. Hitung Luas Segitiga&quot; &amp;  ToChar(13) &amp;&#13;&#10;&quot;3. Hitung Luas Persegi Panjang&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;0. Keluar&quot;" newline="True"/>
+                <input variable="status"/>
+                <if expression="status = 1">
+                    <then>
+                        <output expression="&quot;Kalkulator Keliling Lingkaran&quot; &amp; ToChar(13)" newline="True"/>
+                        <output expression="&quot;Silahkan Masukan Diameter Lingkaran:&quot;" newline="True"/>
+                        <declare name="dl, kl" type="Real" array="False" size=""/>
+                        <input variable="dl"/>
+                        <assign variable="kl" expression="pi * dl"/>
+                        <output expression="ToChar(13) &amp; &quot;========================&quot;" newline="True"/>
+                        <output expression="&quot;Diameter Lingkaran = &quot; &amp; dl &amp; &quot; cm&quot;" newline="True"/>
+                        <output expression="&quot;Keliling Lingkaran = &quot; &amp; ToFixed(kl,2) &amp; &quot; cm&quot;" newline="True"/>
+                        <output expression="&quot;========================&quot; &amp; ToChar(13)" newline="True"/>
+                        <output expression="&quot;Masih Ingin Melanjutkan?&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;1. Lanjut&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;0. Keluar&quot;" newline="True"/>
+                        <input variable="status"/>
+                    </then>
+                    <else>
+                        <if expression="status = 2">
+                            <then>
+                                <output expression="&quot;Kalkulator Luas Segitiga&quot;" newline="True"/>
+                                <declare name="as, ts, ls" type="Real" array="False" size=""/>
+                                <output expression="ToChar(13) &amp; &quot;Silahkan Masukan Alas Segitiga:&quot;" newline="True"/>
+                                <input variable="as"/>
+                                <output expression="ToChar(13) &amp; &quot;Silahkan Masukan Tinggi Segitiga:&quot;" newline="True"/>
+                                <input variable="ts"/>
+                                <assign variable="ls" expression="(as*ts) / 2"/>
+                                <output expression="ToChar(13) &amp; &quot;========================&quot;" newline="True"/>
+                                <output expression="&quot;Alas Segitiga: &quot; &amp; as &amp; &quot; cm&quot;" newline="True"/>
+                                <output expression="&quot;Tinggi Segitiga: &quot; &amp; ts &amp; &quot; cm&quot;" newline="True"/>
+                                <output expression="&quot;Luas Segitiga: &quot; &amp; ToFixed(ls, 2) &amp; &quot; cm&quot;" newline="True"/>
+                                <output expression="&quot;========================&quot; &amp; ToChar(13)" newline="True"/>
+                                <output expression="&quot;Masih Ingin Melanjutkan?&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;1. Lanjut&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;0. Keluar&quot;" newline="True"/>
+                                <input variable="status"/>
+                            </then>
+                            <else>
+                                <if expression="status = 3">
+                                    <then>
+                                        <output expression="&quot;Kalkulator Luas Persegi Panjang&quot;" newline="True"/>
+                                        <declare name="ps, ls, lpp" type="Real" array="False" size=""/>
+                                        <output expression="ToChar(13) &amp; &quot;Silahkan Masukan Panjang Sisi:&quot;" newline="True"/>
+                                        <input variable="ps"/>
+                                        <output expression="ToChar(13) &amp; &quot;Silahkan Masukan Lebar Sisi:&quot;" newline="True"/>
+                                        <input variable="ls"/>
+                                        <assign variable="lpp" expression="ps * ls"/>
+                                        <output expression="ToChar(13) &amp; &quot;========================&quot;" newline="True"/>
+                                        <output expression="&quot;Panjang Sisi: &quot; &amp; ps &amp; &quot; cm&quot;" newline="True"/>
+                                        <output expression="&quot;Lebar Sisi: &quot; &amp; ls &amp; &quot; cm&quot;" newline="True"/>
+                                        <output expression="&quot;Luas Persegi Panjang: &quot; &amp; ToFixed(lpp, 2) &amp; &quot; cm&quot;" newline="True"/>
+                                        <output expression="&quot;========================&quot; &amp; ToChar(13)" newline="True"/>
+                                        <output expression="&quot;Masih Ingin Melanjutkan?&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;1. Lanjut&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;0. Keluar&quot;" newline="True"/>
+                                        <input variable="status"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+            <output expression="ToChar(13) &amp; &quot;Terimakasih...&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
