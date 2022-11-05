@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Galih"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-05 01:32:50 PM"/>
+        <attribute name="created" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTEtMDI7MTA6MTM6MzAgQU07MjgyMA=="/>
+        <attribute name="edited" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTEtMDU7MDE6MzI6NTAgUE07MTE7Mjk5OA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="pin, saldo, cobaPIN" type="Integer" array="False" size=""/>
+            <declare name="exit" type="Boolean" array="False" size=""/>
+            <assign variable="exit" expression="False"/>
+            <declare name="nl" type="String" array="False" size=""/>
+            <assign variable="nl" expression="ToChar(13)"/>
+            <assign variable="pin" expression="1234"/>
+            <assign variable="cobaPIN" expression="0"/>
+            <assign variable="saldo" expression="0"/>
+            <assign variable="exit" expression="False"/>
+            <while expression="exit == False">
+                <declare name="authPIN" type="Integer" array="False" size=""/>
+                <output expression="&quot;ATM BANK JAWA BANGET (BJB)&quot; &amp; nl &amp; nl &amp;&#13;&#10;&quot;Masukan PIN Untuk Melanjutkan&quot;" newline="True"/>
+                <input variable="authPIN"/>
+                <if expression="authPIN = pin">
+                    <then>
+                        <declare name="menu" type="Integer" array="False" size=""/>
+                        <call expression="MainMenu()"/>
+                        <input variable="menu"/>
+                        <if expression="menu = 1">
+                            <then>
+                                <output expression="&quot;Saldo Anda Rp. &quot; &amp; saldo" newline="True"/>
+                            </then>
+                            <else>
+                                <declare name="transaksi" type="Boolean" array="False" size=""/>
+                                <assign variable="transaksi" expression="True"/>
+                                <if expression="menu == 2">
+                                    <then>
+                                        <declare name="tarikTunai" type="Integer" array="False" size=""/>
+                                        <while expression="transaksi == True">
+                                            <output expression="&quot;Masukan Jumlah Penarikan Tunai&quot; &amp; nl &amp;&#13;&#10;&quot;(Kelipatan RP.50.000)&quot; &amp; nl &amp;&#13;&#10;&quot;Maksimum Rp. 1.250.000&quot;" newline="True"/>
+                                            <input variable="tarikTunai"/>
+                                            <if expression="tarikTunai &gt;= 50000 AND tarikTunai &lt;= 1250000">
+                                                <then>
+                                                    <if expression="saldo &gt;= tarikTunai">
+                                                        <then>
+                                                            <output expression="&quot;Anda Berhasil Melakukan Penarikan Tunai Sebesar Rp. &quot; &amp; tarikTunai" newline="True"/>
+                                                            <output expression="&quot;Silahkan Ambil Uang Anda&quot;" newline="True"/>
+                                                            <assign variable="saldo" expression="saldo - tarikTunai"/>
+                                                            <assign variable="transaksi" expression="False"/>
+                                                        </then>
+                                                        <else>
+                                                            <output expression="&quot;Saldo Anda Tidak Mencukupi&quot;" newline="True"/>
+                                                            <assign variable="transaksi" expression="False"/>
+                                                        </else>
+                                                    </if>
+                                                </then>
+                                                <else>
+                                                    <if expression="tarikTunai &lt; 50000">
+                                                        <then>
+                                                            <output expression="&quot;Minimum Penarikan Tunai Adalah Rp. 50.000&quot;" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <output expression="&quot;Jumlah Tarik Tunai Tidak Boleh Lebih Dari Rp. 1.250.000&quot;" newline="True"/>
+                                                        </else>
+                                                    </if>
+                                                    <declare name="status" type="Integer" array="False" size=""/>
+                                                    <output expression="&quot;[1] Masukan Ulang Jumlah Tarik Tunai&quot;" newline="True"/>
+                                                    <output expression="&quot;[0] Keluar&quot;" newline="True"/>
+                                                    <input variable="status"/>
+                                                    <if expression="status != 0">
+                                                        <then>
+                                                            <if expression="status == 1">
+                                                                <then/>
+                                                                <else>
+                                                                    <output expression="&quot;Transaksi Dibatalkan&quot;" newline="True"/>
+                                                                    <assign variable="transaksi" expression="False"/>
+                                                                </else>
+                                                            </if>
+                                                        </then>
+                                                        <else>
+                                                            <assign variable="transaksi" expression="False"/>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </while>
+                                    </then>
+                                    <else>
+                                        <if expression="menu == 3">
+                                            <then>
+                                                <declare name="setorTunai" type="Integer" array="False" size=""/>
+                                                <while expression="transaksi == True">
+                                                    <output expression="&quot;Masukan Jumlah Yang Akan Disetorkan&quot; &amp; nl &amp; &#13;&#10;&quot;Maksimum Rp. 2.000.000&quot;" newline="True"/>
+                                                    <input variable="setorTunai"/>
+                                                    <if expression="setorTunai &gt;= 50000 AND setorTunai &lt;= 2000000">
+                                                        <then>
+                                                            <assign variable="saldo" expression="saldo + setorTunai"/>
+                                                            <output expression="&quot;Anda Berhasil Mentransfer Uang Sebesar Rp. &quot; &amp; setorTunai &amp; &quot; Ke Rekening Anda.&quot;" newline="True"/>
+                                                            <assign variable="transaksi" expression="False"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="setorTunai &lt; 50000">
+                                                                <then>
+                                                                    <output expression="&quot;Jumlah Penyetoran Tunai Tidak Boleh Kurang Dari Rp. 50.000, Silahkan Coba Kembali&quot;" newline="True"/>
+                                                                </then>
+                                                                <else>
+                                                                    <output expression="&quot;Jumlah Penyetoran Tunai Tidak Boleh Lebih Dari Rp. 2000.000&quot;" newline="True"/>
+                                                                </else>
+                                                            </if>
+                                                            <declare name="status" type="Integer" array="False" size=""/>
+                                                            <output expression="&quot;[1] Masukan Ulang Jumlah Setor Tunai&quot;" newline="True"/>
+                                                            <output expression="&quot;[0] Keluar&quot;" newline="True"/>
+                                                            <input variable="status"/>
+                                                            <if expression="status != 0">
+                                                                <then>
+                                                                    <if expression="status == 1">
+                                                                        <then/>
+                                                                        <else>
+                                                                            <output expression="&quot;Transaksi Dibatalkan&quot;" newline="True"/>
+                                                                            <assign variable="transaksi" expression="False"/>
+                                                                        </else>
+                                                                    </if>
+                                                                </then>
+                                                                <else>
+                                                                    <assign variable="transaksi" expression="False"/>
+                                                                </else>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </while>
+                                            </then>
+                                            <else>
+                                                <if expression="menu == 4">
+                                                    <then>
+                                                        <while expression="transaksi == True">
+                                                            <declare name="pinBaru1, pinBaru2, digit" type="Integer" array="False" size=""/>
+                                                            <assign variable="pinBaru1" expression="0"/>
+                                                            <assign variable="digit" expression="0"/>
+                                                            <while expression="digit != 6">
+                                                                <output expression="&quot;Silahkan Masukan PIN Baru Anda&quot;" newline="True"/>
+                                                                <input variable="pinBaru1"/>
+                                                                <assign variable="digit" expression="Len(ToString(PinBaru1))"/>
+                                                                <if expression="digit == 6">
+                                                                    <then/>
+                                                                    <else>
+                                                                        <output expression="&quot;PIN Harus 6 Digit&quot;" newline="True"/>
+                                                                    </else>
+                                                                </if>
+                                                            </while>
+                                                            <output expression="&quot;Masukan Ulang PIN Baru Anda&quot;" newline="True"/>
+                                                            <input variable="pinBaru2"/>
+                                                            <if expression="pinBaru1 == pinBaru2">
+                                                                <then>
+                                                                    <assign variable="pin" expression="pinBaru1"/>
+                                                                    <assign variable="transaksi" expression="False"/>
+                                                                    <output expression="&quot;PIN Berhasil Diubah&quot;" newline="True"/>
+                                                                </then>
+                                                                <else>
+                                                                    <output expression="&quot;PIN Yang Anda Masukan Tidak Sama&quot;" newline="True"/>
+                                                                    <declare name="status" type="Integer" array="False" size=""/>
+                                                                    <output expression="&quot;Gagal Mengubah PIN&quot; &amp; nl &amp; nl &amp;&#13;&#10;&quot;[1] Ulangi Mengubah PIN&quot;" newline="True"/>
+                                                                    <output expression="&quot;[0] Keluar&quot;" newline="True"/>
+                                                                    <input variable="status"/>
+                                                                    <if expression="status != 0">
+                                                                        <then>
+                                                                            <if expression="status == 1">
+                                                                                <then/>
+                                                                                <else>
+                                                                                    <output expression="&quot;Transaksi Dibatalkan&quot;" newline="True"/>
+                                                                                    <assign variable="transaksi" expression="False"/>
+                                                                                </else>
+                                                                            </if>
+                                                                        </then>
+                                                                        <else>
+                                                                            <assign variable="transaksi" expression="False"/>
+                                                                        </else>
+                                                                    </if>
+                                                                </else>
+                                                            </if>
+                                                        </while>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="menu == 0">
+                                                            <then>
+                                                                <assign variable="exit" expression="True"/>
+                                                            </then>
+                                                            <else>
+                                                                <output expression="&quot;Pilihan Yang Anda Masukan Tidak Tersedia&quot;" newline="True"/>
+                                                            </else>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                        <if expression="exit == True">
+                            <then>
+                                <output expression="&quot;Terimakasih Telah Menggunakan ATM BANK BJB&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <declare name="lanjut" type="String" array="False" size=""/>
+                                <assign variable="lanjut" expression="&quot;n&quot;"/>
+                                <while expression="lanjut != &quot;y&quot; AND lanjut != &quot;Y&quot; AND lanjut != &quot;t&quot; AND lanjut != &quot;T&quot;">
+                                    <output expression="&quot;Ingin Melakukan Transaksi Lain?&quot;" newline="True"/>
+                                    <output expression="&quot;[Y] Ya&quot; &amp; nl &amp;&#13;&#10;&quot;[T] Tidak&quot;" newline="True"/>
+                                    <input variable="lanjut"/>
+                                    <if expression="lanjut == &quot;y&quot; OR lanjut == &quot;Y&quot; OR lanjut == &quot;t&quot; OR lanjut == &quot;T&quot;">
+                                        <then>
+                                            <if expression="lanjut == &quot;t&quot; OR lanjut == &quot;T&quot;">
+                                                <then>
+                                                    <assign variable="exit" expression="True"/>
+                                                    <output expression="&quot;Terimakasih Telah Menggunakan ATM BANK BJB&quot;" newline="True"/>
+                                                </then>
+                                                <else/>
+                                            </if>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Pilihan Yang Anda Masukan Salah&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </while>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <assign variable="cobaPIN" expression="cobaPIN + 1"/>
+                        <if expression="cobaPIN = 3">
+                            <then>
+                                <output expression="&quot;Anda Telah Salah Memasukan PIN Sebanyak 3 Kali&quot; &amp; nl &amp; &#13;&#10;&quot;Kartu Anda Telah Diblokir, Silahkan Hubungi BANK BJB&quot;" newline="True"/>
+                                <assign variable="exit" expression="True"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;PIN Salah, Silahkan Coba Lagi&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+    <function name="MainMenu" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Selamat Datang Di ATM BANK BJB&quot;" newline="True"/>
+            <output expression="&quot;Silahkan Masukan Pilihan Anda&quot;" newline="True"/>
+            <output expression="&quot;[1] Cek Saldo&quot;" newline="True"/>
+            <output expression="&quot;[2] Tarik Tunai&quot;" newline="True"/>
+            <output expression="&quot;[3] Setor Tunai&quot;" newline="True"/>
+            <output expression="&quot;[4] Ubah PIN&quot;" newline="True"/>
+            <output expression="&quot;[0] Keluar&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
