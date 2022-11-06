@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Galih"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-06 04:02:56 PM"/>
+        <attribute name="created" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTEtMDY7MDI6NTM6NDQgUE07Mjg0OQ=="/>
+        <attribute name="edited" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTEtMDY7MDQ6MDI6NTYgUE07MjsyOTU3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, PScore, BScore, player" type="Integer" array="False" size=""/>
+            <declare name="x" type="String" array="True" size="4"/>
+            <assign variable="x[1]" expression="&quot;Batu&quot;"/>
+            <assign variable="x[2]" expression="&quot;Kertas&quot;"/>
+            <assign variable="x[3]" expression="&quot;Gunting&quot;"/>
+            <assign variable="PScore" expression="0"/>
+            <assign variable="BScore" expression="0"/>
+            <declare name="bot" type="Integer" array="False" size=""/>
+            <declare name="status" type="Integer" array="False" size=""/>
+            <output expression="&quot;Mau Main Berapa Kali?&quot;" newline="True"/>
+            <input variable="status"/>
+            <for variable="i" start="1" end="status" direction="inc" step="1">
+                <declare name="p, b" type="String" array="False" size=""/>
+                <assign variable="bot" expression="Random(3)+1"/>
+                <output expression="&quot;[1] &quot; &amp; x[1]" newline="True"/>
+                <output expression="&quot;[2] &quot; &amp; x[2]" newline="True"/>
+                <output expression="&quot;[3] &quot; &amp; x[3]" newline="True"/>
+                <output expression="&quot;Masukan Pilihan Kamu:&quot;" newline="True"/>
+                <input variable="player"/>
+                <assign variable="p" expression="x[player]"/>
+                <assign variable="b" expression="x[bot]"/>
+                <if expression="player == 1">
+                    <then>
+                        <if expression="bot == 1">
+                            <then>
+                                <call expression="enter()"/>
+                                <output expression="&quot;Kamu = &quot; &amp; p &amp; &quot; || &quot;" newline="False"/>
+                                <output expression="&quot;Komputer = &quot; &amp; b" newline="True"/>
+                                <output expression="&quot;Seri !!&quot;" newline="True"/>
+                                <output expression="&quot;Skor Kamu: &quot; &amp; PScore &amp; &quot; || &quot;" newline="False"/>
+                                <output expression="&quot;Skor Komputer: &quot; &amp; BScore" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="bot == 2">
+                                    <then>
+                                        <call expression="enter()"/>
+                                        <output expression="&quot;Kamu = &quot; &amp; p &amp; &quot; || &quot;" newline="False"/>
+                                        <output expression="&quot;Komputer = &quot; &amp; b" newline="True"/>
+                                        <output expression="&quot;Kamu Kalah !!&quot;" newline="True"/>
+                                        <assign variable="BScore" expression="BScore + 1"/>
+                                        <output expression="&quot;Skor Kamu: &quot; &amp; PScore &amp; &quot; || &quot;" newline="False"/>
+                                        <output expression="&quot;Skor Komputer: &quot; &amp; BScore" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="bot == 3">
+                                            <then>
+                                                <call expression="enter()"/>
+                                                <output expression="&quot;Kamu = &quot; &amp; p &amp; &quot; || &quot;" newline="False"/>
+                                                <output expression="&quot;Komputer = &quot; &amp; b" newline="True"/>
+                                                <output expression="&quot;Kamu Menang !!&quot;" newline="True"/>
+                                                <assign variable="PScore" expression="PScore + 1"/>
+                                                <output expression="&quot;Skor Kamu: &quot; &amp; PScore &amp; &quot; || &quot;" newline="False"/>
+                                                <output expression="&quot;Skor Komputer: &quot; &amp; BScore" newline="True"/>
+                                            </then>
+                                            <else/>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <if expression="player == 2">
+                            <then>
+                                <if expression="bot == 2">
+                                    <then>
+                                        <call expression="enter()"/>
+                                        <output expression="&quot;Kamu = &quot; &amp; p &amp; &quot; || &quot;" newline="False"/>
+                                        <output expression="&quot;Komputer = &quot; &amp; b" newline="True"/>
+                                        <output expression="&quot;Seri !!&quot;" newline="True"/>
+                                        <output expression="&quot;Skor Kamu: &quot; &amp; PScore &amp; &quot; || &quot;" newline="False"/>
+                                        <output expression="&quot;Skor Komputer: &quot; &amp; BScore" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="bot == 1">
+                                            <then>
+                                                <call expression="enter()"/>
+                                                <output expression="&quot;Kamu = &quot; &amp; p &amp; &quot; || &quot;" newline="False"/>
+                                                <output expression="&quot;Komputer = &quot; &amp; b" newline="True"/>
+                                                <output expression="&quot;Kamu Menang !!&quot;" newline="True"/>
+                                                <assign variable="PScore" expression="PScore + 1"/>
+                                                <output expression="&quot;Skor Kamu: &quot; &amp; PScore &amp; &quot; || &quot;" newline="False"/>
+                                                <output expression="&quot;Skor Komputer: &quot; &amp; BScore" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <if expression="bot == 3">
+                                                    <then>
+                                                        <call expression="enter()"/>
+                                                        <output expression="&quot;Kamu = &quot; &amp; p &amp; &quot; || &quot;" newline="False"/>
+                                                        <output expression="&quot;Komputer = &quot; &amp; b" newline="True"/>
+                                                        <output expression="&quot;Kamu Kalah !!&quot;" newline="True"/>
+                                                        <assign variable="BScore" expression="BScore + 1"/>
+                                                        <output expression="&quot;Skor Kamu: &quot; &amp; PScore &amp; &quot; || &quot;" newline="False"/>
+                                                        <output expression="&quot;Skor Komputer: &quot; &amp; BScore" newline="True"/>
+                                                    </then>
+                                                    <else/>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </then>
+                            <else>
+                                <if expression="player == 3">
+                                    <then>
+                                        <if expression="bot == 3">
+                                            <then>
+                                                <call expression="enter()"/>
+                                                <output expression="&quot;Kamu = &quot; &amp; p &amp; &quot; || &quot;" newline="False"/>
+                                                <output expression="&quot;Komputer = &quot; &amp; b" newline="True"/>
+                                                <output expression="&quot;Seri !!&quot;" newline="True"/>
+                                                <output expression="&quot;Skor Kamu: &quot; &amp; PScore &amp; &quot; || &quot;" newline="False"/>
+                                                <output expression="&quot;Skor Komputer: &quot; &amp; BScore" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <if expression="bot == 2">
+                                                    <then>
+                                                        <call expression="enter()"/>
+                                                        <output expression="&quot;Kamu = &quot; &amp; p &amp; &quot; || &quot;" newline="False"/>
+                                                        <output expression="&quot;Komputer = &quot; &amp; b" newline="True"/>
+                                                        <output expression="&quot;Kamu Menang !!&quot;" newline="True"/>
+                                                        <assign variable="PScore" expression="PScore + 1"/>
+                                                        <output expression="&quot;Skor Kamu: &quot; &amp; PScore &amp; &quot; || &quot;" newline="False"/>
+                                                        <output expression="&quot;Skor Komputer: &quot; &amp; BScore" newline="True"/>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="bot == 1">
+                                                            <then>
+                                                                <call expression="enter()"/>
+                                                                <output expression="&quot;Kamu = &quot; &amp; p &amp; &quot; || &quot;" newline="False"/>
+                                                                <output expression="&quot;Komputer = &quot; &amp; b" newline="True"/>
+                                                                <output expression="&quot;Kamu Kalah !!&quot;" newline="True"/>
+                                                                <assign variable="BScore" expression="BScore + 1"/>
+                                                                <output expression="&quot;Skor Kamu: &quot; &amp; PScore &amp; &quot; || &quot;" newline="False"/>
+                                                                <output expression="&quot;Skor Komputer: &quot; &amp; BScore" newline="True"/>
+                                                            </then>
+                                                            <else/>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <declare name="n" type="String" array="False" size=""/>
+                <output expression="ToChar(13) &amp; &quot;tekan enter untuk melanjutkan&quot;" newline="True"/>
+                <input variable="n"/>
+                <call expression="enter()"/>
+            </for>
+            <output expression="&quot;Skor Akhir:&quot;" newline="True"/>
+            <output expression="&quot;Kamu: &quot; &amp; PScore &amp; &quot; || &quot;" newline="False"/>
+            <output expression="&quot;Komputer: &quot;&amp; BScore" newline="True"/>
+            <if expression="PScore &gt; BScore">
+                <then>
+                    <output expression="&quot;Hoki lu bisa menang&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="PScore == BScore">
+                        <then>
+                            <output expression="&quot;Pffftt.... Lawan Bot Doang Masa Seri...&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;YAAAAAHH KALAH......&quot;" newline="True"/>
+                            <output expression="&quot;CUPUUUUUUU !!&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Terimakasih Sudah Bermain&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="enter" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="w" type="Integer" array="False" size=""/>
+            <for variable="w" start="1" end="20" direction="inc" step="1">
+                <output expression="ToChar(13)" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
