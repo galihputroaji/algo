@@ -18,4 +18,4 @@
 	 - [Kalkulator Luas & Keliling](https://github.com/galihputroaji/algo/blob/main/Perulangan/Kalkulator%20Algo.fprg)
 	 - [Mesin ATM](https://github.com/galihputroaji/algo/blob/main/Perulangan/Mesin%20ATM.fprg)
   - Array
-	 - [Batu Kertas Gunting](https://github.com)
+	 - [Batu Kertas Gunting](https://github.com/galihputroaji/algo/blob/main/Array/BatuKertasGunting.fprg)
