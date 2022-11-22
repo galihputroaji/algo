@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Galih"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-22 07:30:19 PM"/>
+        <attribute name="created" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTEtMjI7MDc6MDY6MzggUE07Mjg1Mw=="/>
+        <attribute name="edited" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTEtMjI7MDc6MzA6MTkgUE07MTsyOTU3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="tAwal, tAkhir, tahun" type="Integer" array="False" size=""/>
+            <output expression="&quot;Silahkan Masukan Tahun Awal&quot;" newline="True"/>
+            <input variable="tAwal"/>
+            <output expression="&quot;Silahkan Masukan Tahun Akhir&quot;" newline="True"/>
+            <input variable="tAkhir"/>
+            <output expression="&quot;Mengidentifikasi Tahun Kabisat dari tahun &quot; &amp; tAwal &amp; &quot; Hingga tahun&quot; &amp; tAkhir" newline="True"/>
+            <for variable="tahun" start="tAwal" end="tAkhir" direction="inc" step="1">
+                <if expression="tahun % 400 == 0">
+                    <then>
+                        <output expression="&quot;Tahun &quot; &amp; tahun &amp; &quot; Adalah Tahun Kabisat&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="tahun % 100 == 0">
+                            <then>
+                                <output expression="&quot;Tahun &quot; &amp; tahun &amp; &quot; Bukan Tahun Kabisat&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="tahun % 4 == 0">
+                                    <then>
+                                        <output expression="&quot;Tahun &quot; &amp; tahun &amp; &quot; Adalah Tahun Kabisat&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;Tahun &quot; &amp; tahun &amp; &quot; Bukan Tahun Kabisat&quot;" newline="True"/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

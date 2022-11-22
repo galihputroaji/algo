@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Galih"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-22 04:33:05 PM"/>
+        <attribute name="created" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTEtMjI7MDQ6MDM6NDQgUE07Mjg0NA=="/>
+        <attribute name="edited" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTEtMjI7MDQ6MzI6NDYgUE07MTtHYWxpaDtERVNLVE9QLU1JUlYwREc7MjAyMi0xMS0yMjswNDoxMzozNCBQTTtHYWxpaCBQdXRybyBBamkgLSBLYXRhIFNhbmRpLmZwcmc7ODc3OQ=="/>
+        <attribute name="edited" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTEtMjI7MDQ6MzM6MDUgUE07MjsyOTUz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Nama: Galih Putro Aji&#13;&#10;NPM: 1101221174&#13;&#10;Jawaban UTS Ganjil Genap"/>
+            <declare name="start, end" type="Integer" array="False" size=""/>
+            <output expression="&quot;Program Ganjil Genap&quot;" newline="True"/>
+            <output expression="&quot;Silahkan Masukan Nilai Awal: &quot;" newline="True"/>
+            <input variable="start"/>
+            <output expression="&quot;Silahkan Masukan Nilai Akhir: &quot;" newline="True"/>
+            <input variable="end"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="start" end="end" direction="inc" step="1">
+                <if expression="i % 2 == 0">
+                    <then>
+                        <output expression="i &amp; &quot; Adalah Bilangan Genap&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <output expression="i &amp; &quot; Adalah Bilangan Ganjil&quot;" newline="True"/>
+                    </else>
+                </if>
+            </for>
+            <output expression="&quot;Terimakasih...&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

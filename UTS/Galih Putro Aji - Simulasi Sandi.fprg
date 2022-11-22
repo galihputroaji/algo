@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Galih"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-22 05:11:01 PM"/>
+        <attribute name="created" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTEtMjI7MDQ6MTM6MzQgUE07Mjg0NA=="/>
+        <attribute name="edited" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTEtMjI7MDU6MTE6MDEgUE07NjsyOTUw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Nama: Galih Putro Aji&#13;&#10;NPM: 1101221174&#13;&#10;Jawaban UTS Simulasi Sandi"/>
+            <declare name="nama" type="String" array="False" size=""/>
+            <output expression="&quot;Sikadu UNBAJA&quot;" newline="True"/>
+            <output expression="&quot;Silahkan Masukan Nama Anda&quot;" newline="True"/>
+            <input variable="nama"/>
+            <output expression="&quot;Selamat Datang &quot; &amp; nama" newline="True"/>
+            <declare name="userSecret, userPass" type="String" array="False" size=""/>
+            <assign variable="userSecret" expression="&quot;test&quot;"/>
+            <declare name="tryPIN" type="Integer" array="False" size=""/>
+            <assign variable="tryPIN" expression="0"/>
+            <while expression="tryPIN &lt; 3">
+                <output expression="&quot;Masukan Kata Sandi Untuk Melanjutkan&quot;" newline="True"/>
+                <input variable="userPass"/>
+                <if expression="userPass == userSecret">
+                    <then>
+                        <output expression="&quot;Kata Sandi Benar&quot;" newline="True"/>
+                        <output expression="&quot;Sukses!&quot;" newline="True"/>
+                        <assign variable="tryPIN" expression="3"/>
+                    </then>
+                    <else>
+                        <assign variable="tryPIN" expression="tryPIN + 1"/>
+                        <if expression="tryPIN == 3">
+                            <then>
+                                <output expression="&quot;Anda Telah Salah Memasukan Sandi Sebanyak Tiga Kali&quot;" newline="True"/>
+                                <output expression="&quot;Akun Anda Telah Dibekukan&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;Kata Sandi Salah&quot;" newline="True"/>
+                                <output expression="&quot;Sisa Percobaan: &quot; &amp; 3 - tryPIN &amp; &quot; Kali Lagi&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

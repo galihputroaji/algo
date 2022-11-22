@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Galih"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-22 06:57:02 PM"/>
+        <attribute name="created" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTEtMjI7MDQ6MzM6MTUgUE07Mjg0NQ=="/>
+        <attribute name="edited" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTEtMjI7MDY6NTU6NTAgUE07MTtHYWxpaDtERVNLVE9QLU1JUlYwREc7MjAyMi0xMS0yMjswNDoxMzozNCBQTTtHYWxpaCBQdXRybyBBamkgLSBTaW11bGFzaSBTYW5kaS5mcHJnOzkyMzU="/>
+        <attribute name="edited" value="R2FsaWg7REVTS1RPUC1NSVJWMERHOzIwMjItMTEtMjI7MDY6NTc6MDIgUE07MjsyOTU4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Nama: Galih Putro Aji&#13;&#10;NPM: 1101221174&#13;&#10;Jawaban UTS Kategori Usia"/>
+            <declare name="tLahir, usia" type="Integer" array="False" size=""/>
+            <output expression="&quot;Silahkan Masukan Tahun Lahir Anda: &quot;" newline="True"/>
+            <input variable="tLahir"/>
+            <assign variable="usia" expression="2022 - tLahir"/>
+            <comment text="Menggunakan &quot;Perkiraan&quot; karena pembandingnya hanya tahun"/>
+            <output expression="&quot;Perkiraan Usia Anda Adalah: &quot; &amp; usia &amp; &quot; Tahun&quot;" newline="True"/>
+            <output expression="&quot;Anda Masuk Kategori Usia &quot;" newline="False"/>
+            <if expression="usia &gt; 4 AND usia &lt; 12">
+                <then>
+                    <output expression="&quot;Anak - Anak&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="usia &gt;= 12 AND usia &lt; 20">
+                        <then>
+                            <output expression="&quot;Remaja&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="usia &gt;= 20 AND usia &lt; 40">
+                                <then>
+                                    <output expression="&quot;Dewasa&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Lansia&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
